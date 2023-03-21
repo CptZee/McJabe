@@ -98,15 +98,16 @@ public class CredentialHelper extends SQLiteOpenHelper {
         content.put("accountID", data.getAccountID());
         content.put("username", data.getUsername());
         content.put("password", data.getPassword());
+        content.put("active", 1);
         return content;
     }
 
     private Credential prepareData(Cursor cursor){
         Credential data = new Credential();
-        data.setId(cursor.getInt(1));
-        data.setAccountID(cursor.getInt(2));
-        data.setUsername(cursor.getString(3));
-        data.setPassword(cursor.getString(4));
+        data.setId(cursor.getInt(0));
+        data.setAccountID(cursor.getInt(1));
+        data.setUsername(cursor.getString(2));
+        data.setPassword(cursor.getString(3));
         return data;
     }
 }
