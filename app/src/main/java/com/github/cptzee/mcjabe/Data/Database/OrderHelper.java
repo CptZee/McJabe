@@ -13,8 +13,8 @@ import com.github.cptzee.mcjabe.Data.Order;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OderHelper extends SQLiteOpenHelper {
-    public OderHelper(Context context) {
+public class OrderHelper extends SQLiteOpenHelper {
+    public OrderHelper(Context context) {
         super(context, "OrderDB", null, 1);
     }
 
