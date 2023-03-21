@@ -26,6 +26,7 @@ public class FoodItemsHelper  extends SQLiteOpenHelper {
             db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLENAME + "(" +
                     "id INTEGER," +
                     "foodID INTEGER," +
+                    "quantity INTEGER," +
                     "orderID INTEGER," +
                     "active INTEGER);");
         } catch (SQLiteException e) {
@@ -95,6 +96,7 @@ public class FoodItemsHelper  extends SQLiteOpenHelper {
     private ContentValues prepareData(FoodItems data) {
         ContentValues content = new ContentValues();
         content.put("foodID", data.getFoodID());
+        content.put("quantity", data.getQuantity());
         content.put("orderID", data.getOrderID());
         return content;
     }
@@ -103,7 +105,8 @@ public class FoodItemsHelper  extends SQLiteOpenHelper {
         FoodItems data = new FoodItems();
         data.setId(cursor.getInt(1));
         data.setFoodID(cursor.getInt(2));
-        data.setOrderID(cursor.getInt(3));
+        data.setQuantity(cursor.getInt(3));
+        data.setOrderID(cursor.getInt(4));
         return data;
     }
 }
