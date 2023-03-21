@@ -73,6 +73,7 @@ public class SplashActivity extends AppCompatActivity {
             data.setDescription(foodDescriptions[i]);
             data.setPrice(foodPrices[i]);
             data.setCategory(foodCategories[i]);
+            foodHelper.insert(data);
         }
 
         editor.putBoolean("first-launch", false);
