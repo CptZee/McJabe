@@ -98,15 +98,16 @@ public class FoodItemsHelper  extends SQLiteOpenHelper {
         content.put("foodID", data.getFoodID());
         content.put("quantity", data.getQuantity());
         content.put("orderID", data.getOrderID());
+        content.put("active", 1);
         return content;
     }
 
     private FoodItems prepareData(Cursor cursor) {
         FoodItems data = new FoodItems();
-        data.setId(cursor.getInt(1));
-        data.setFoodID(cursor.getInt(2));
-        data.setQuantity(cursor.getInt(3));
-        data.setOrderID(cursor.getInt(4));
+        data.setId(cursor.getInt(0));
+        data.setFoodID(cursor.getInt(1));
+        data.setQuantity(cursor.getInt(2));
+        data.setOrderID(cursor.getInt(3));
         return data;
     }
 }

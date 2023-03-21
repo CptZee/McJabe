@@ -27,7 +27,7 @@ public class FoodHelper extends SQLiteOpenHelper {
                     "id INTEGER," +
                     "name TEXT," +
                     "description TEXT," +
-                    "price INTEGER," +
+                    "price REAL," +
                     "category TEXT," +
                     "active INTEGER);");
         } catch (SQLiteException e) {
@@ -63,7 +63,7 @@ public class FoodHelper extends SQLiteOpenHelper {
             Cursor reader = db.rawQuery("SELECT * FROM " + TABLENAME, null);
             while (reader.moveToNext())
                 list.add(prepareData(reader));
-            db.close();
+            //db.close();
         } catch (SQLiteException e) {
             Log.e("Database", "Unable to retrieve data from the " + TABLENAME + " table");
         }
@@ -99,17 +99,18 @@ public class FoodHelper extends SQLiteOpenHelper {
         content.put("name", data.getName());
         content.put("description", data.getDescription());
         content.put("price", data.getPrice());
-        content.put("category", data.getPrice());
+        content.put("category", data.getCategory());
+        content.put("active", 1);
         return content;
     }
 
     private Food prepareData(Cursor cursor) {
         Food data = new Food();
-        data.setId(cursor.getInt(1));
-        data.setName(cursor.getString(2));
-        data.setDescription(cursor.getString(3));
-        data.setPrice(cursor.getDouble(4));
-        data.setCategory(cursor.getString(5));
+        data.setId(cursor.getInt(0));
+        data.setName(cursor.getString(1));
+        data.setDescription(cursor.getString(2));
+        data.setPrice(cursor.getDouble(3));
+        data.setCategory(cursor.getString(4));
         return data;
     }
 }

@@ -34,7 +34,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         Food food = list.get(position);
         viewHolder.getName().setText(food.getName());
         viewHolder.getDesc().setText(food.getDescription());
-        viewHolder.getPrice().setText(String.valueOf(food.getPrice()));
+        viewHolder.getPrice().setText("Price: " + food.getPrice() + " PHP");
     }
 
     // Return the size of your dataset (invoked by the layout manager)

@@ -1,6 +1,7 @@
 package com.github.cptzee.mcjabe;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.cptzee.mcjabe.Data.Database.Adapter.FoodAdapter;
 import com.github.cptzee.mcjabe.Data.Database.FoodHelper;
+import com.github.cptzee.mcjabe.Data.Food;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -26,5 +28,8 @@ public class DashboardActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(foodAdapter);
 
+        for(Food food: foodHelper.get()){
+            Log.i("Food List", food.getName());
+        }
     }
 }

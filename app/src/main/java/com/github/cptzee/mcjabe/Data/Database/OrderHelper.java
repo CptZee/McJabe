@@ -96,14 +96,15 @@ public class OrderHelper extends SQLiteOpenHelper {
         ContentValues content = new ContentValues();
         content.put("accountID", data.getAccountID());
         content.put("totalPrice", data.getTotalPrice());
+        content.put("active", 1);
         return content;
     }
 
     private Order prepareData(Cursor cursor) {
         Order data = new Order();
-        data.setId(cursor.getInt(1));
-        data.setAccountID(cursor.getInt(2));
-        data.setTotalPrice(cursor.getDouble(3));
+        data.setId(cursor.getInt(0));
+        data.setAccountID(cursor.getInt(1));
+        data.setTotalPrice(cursor.getDouble(2));
         return data;
     }
 }

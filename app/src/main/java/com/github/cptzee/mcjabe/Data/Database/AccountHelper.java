@@ -108,20 +108,21 @@ public class AccountHelper extends SQLiteOpenHelper {
         content.put("barangay", data.getBarangay());
         content.put("city", data.getCity());
         content.put("province", data.getProvince());
+        content.put("active", 1);
         return content;
     }
 
     private Account prepareData(Cursor cursor){
         Account data = new Account();
-        data.setId(cursor.getInt(1));
-        data.setFirstName(cursor.getString(2));
-        data.setLastName(cursor.getString(3));
-        data.setContactNo(cursor.getString(4));
-        data.setEmail(cursor.getString(5));
-        data.setStreetName(cursor.getString(6));
-        data.setBarangay(cursor.getString(7));
-        data.setCity(cursor.getString(8));
-        data.setProvince(cursor.getString(9));
+        data.setId(cursor.getInt(0));
+        data.setFirstName(cursor.getString(1));
+        data.setLastName(cursor.getString(2));
+        data.setContactNo(cursor.getString(3));
+        data.setEmail(cursor.getString(4));
+        data.setStreetName(cursor.getString(5));
+        data.setBarangay(cursor.getString(6));
+        data.setCity(cursor.getString(7));
+        data.setProvince(cursor.getString(8));
         return data;
     }
 }
