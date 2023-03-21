@@ -1,4 +1,4 @@
-package com.github.cptzee.mcjabe.Data.Adapter;
+package com.github.cptzee.mcjabe.Data.Database.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

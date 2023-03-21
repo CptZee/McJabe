@@ -6,10 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.cptzee.mcjabe.Data.Adapter.FoodAdapter;
+import com.github.cptzee.mcjabe.Data.Database.Adapter.FoodAdapter;
 import com.github.cptzee.mcjabe.Data.Database.FoodHelper;
-
-import java.util.ArrayList;
 
 public class DashboardActivity extends AppCompatActivity {
 
