@@ -12,20 +12,28 @@ public class Items {
         this.item_image = item_image;
     }
 
-    private void setItemName(String item_name) {
+    public void setItemName(String item_name) {
         this.item_name = item_name;
     }
 
-    private String getItemName() {
+    public String getItemName() {
         return item_name;
     }
 
-    private void setItemDescription(String item_description) {
+    public void setItemDescription(String item_description) {
         this.item_description = item_description;
     }
 
-    private String getItemDescription() {
+    public String getItemDescription() {
         return item_description;
+    }
+
+    public void setItemImage(int item_image) {
+        this.item_image = item_image;
+    }
+
+    public int getItemImage() {
+        return item_image;
     }
 
 }
