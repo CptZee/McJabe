@@ -67,7 +67,7 @@ public class SplashActivity extends AppCompatActivity {
         double[] foodPrices = {100.00, 300.00, 75.00};
         String[] foodCategories = {"Desert", "Main", "Appetizer"};
 
-        for(int i = 1; i <= 3; i++){
+        for(int i = 0; i < 3; i++){
             Food data = new Food();
             data.setName(foodNames[i]);
             data.setDescription(foodDescriptions[i]);

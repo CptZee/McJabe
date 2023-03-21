@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.cptzee.mcjabe.Data.Adapter.FoodAdapter;
+import com.github.cptzee.mcjabe.Data.Database.FoodHelper;
+
 import java.util.ArrayList;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -16,17 +19,14 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        ArrayList<Items> movieArrayList = new ArrayList<Items>();
-        movieArrayList.add(new Items("Item 1", "Item Description", R.drawable.ic_launcher_background));
-        movieArrayList.add(new Items("Item 2", "Item Description", R.drawable.ic_launcher_background));
-        movieArrayList.add(new Items("Item 3", "Item Description", R.drawable.ic_launcher_background));
 
-        ItemsAdapter itemsAdapter = new ItemsAdapter(this, movieArrayList);
+        FoodHelper foodHelper = new FoodHelper(this);
+        FoodAdapter foodAdapter = new FoodAdapter(foodHelper.get());
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(itemsAdapter);
+        recyclerView.setAdapter(foodAdapter);
 
     }
 }
